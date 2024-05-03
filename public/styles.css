@@ -448,14 +448,37 @@ textarea.form-field {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .form-overlay-inner {
-  align-self: center;
   max-width: 880px;
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,.07);
   background-color: #fff;
   margin: 16px;
   flex: 1;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 340px 1fr;
 }
+
+.form-photo {
+  order: 1;
+  grid-row: 1;
+}
+
+.justify-right {
+  display: flex;
+  justify-content: end;
+}
+
+.form-content {
+  padding: 38px 54px;
+  position: relative;
+}
+
+.close-form-overlay {
+  position: absolute;
+  top: 0; 
+  right: 0;
+}
+
