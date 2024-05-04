@@ -33,3 +33,7 @@ function handleButtonClick(e) {
     }
   })
 }
+
+function openOverlay(el) {
+  document.querySelector(".form-overlay").style.display = ""
+}
