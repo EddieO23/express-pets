@@ -448,9 +448,20 @@ textarea.form-field {
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: all 0.33s ease-out;
+}
+
+.form-overlay--is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .form-overlay-inner {
+  position: relative;
   max-width: 880px;
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,.07);
   background-color: #fff;
@@ -458,13 +469,17 @@ textarea.form-field {
   flex: 1;
   align-self: center;
   display: grid;
-  grid-template-columns: 340px 1fr;
 }
 
 .form-photo {
   order: 1;
   grid-row: 1;
   position: relative;
+}
+
+@media screen and (min-width: 745px) {
+  grid-template-columns: 340px 1fr;
+  .form-overlay-inner 
 }
 
 .form-photo p {
@@ -485,6 +500,7 @@ textarea.form-field {
 color: #000;
 font-size: 2.25rem;
 font-weight: normal;
+display: block;
 }
 
 .form-photo img {
@@ -510,6 +526,12 @@ font-weight: normal;
   right: 12px;
   font-size: 2.25rem;
   transform: scaleX(1.2);
+  cursor: pointer;
+  opacity: .7;
+}
+
+.close-form-overlay:hover {
+  opacity: 1;
 }
 
 .pet-contact-btn {
@@ -526,4 +548,37 @@ font-weight: normal;
 
 .pet-contact-btn:hover {
   opacity: 1;
+}
+
+.thank-you {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 102;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  transition: all .3s ease-out;
+}
+
+.thank-you--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.thank-you p {
+  align-self: center;
+  font-size: 1.4rem;
+}
+
+.thank-you svg {
+  color: green;
+  position: relative;
+  top: 4px;
+  margin-right: 4px;
 }
